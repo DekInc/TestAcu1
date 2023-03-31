@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using TestAcuDatabase.SqlServer;
-using TestAcu1.Models;
+using TestAcuModels;
 
 namespace TestAcu1.Controllers
 {

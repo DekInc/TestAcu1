@@ -1,4 +1,4 @@
-﻿namespace TestAcu1.Models
+﻿namespace TestAcuModels
 {
     /// <summary>
     /// Clase para retornar valores al frontend o retornar un error

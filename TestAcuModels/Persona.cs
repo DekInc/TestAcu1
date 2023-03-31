@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace TestAcuDatabase.SqlServer
+﻿namespace TestAcuModels
 {
     public partial class Persona
     {

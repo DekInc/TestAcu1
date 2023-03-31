@@ -1,0 +1,12 @@
+C:\Users\Hil\source\repos\Git\TestAcu1\TestAcuModels\bin\Debug\net6.0\TestAcuModels.deps.json
+C:\Users\Hil\source\repos\Git\TestAcu1\TestAcuModels\bin\Debug\net6.0\TestAcuModels.dll
+C:\Users\Hil\source\repos\Git\TestAcu1\TestAcuModels\bin\Debug\net6.0\TestAcuModels.pdb
+C:\Users\Hil\source\repos\Git\TestAcu1\TestAcuModels\obj\Debug\net6.0\TestAcuModels.csproj.AssemblyReference.cache
+C:\Users\Hil\source\repos\Git\TestAcu1\TestAcuModels\obj\Debug\net6.0\TestAcuModels.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Hil\source\repos\Git\TestAcu1\TestAcuModels\obj\Debug\net6.0\TestAcuModels.AssemblyInfoInputs.cache
+C:\Users\Hil\source\repos\Git\TestAcu1\TestAcuModels\obj\Debug\net6.0\TestAcuModels.AssemblyInfo.cs
+C:\Users\Hil\source\repos\Git\TestAcu1\TestAcuModels\obj\Debug\net6.0\TestAcuModels.csproj.CoreCompileInputs.cache
+C:\Users\Hil\source\repos\Git\TestAcu1\TestAcuModels\obj\Debug\net6.0\TestAcuModels.dll
+C:\Users\Hil\source\repos\Git\TestAcu1\TestAcuModels\obj\Debug\net6.0\refint\TestAcuModels.dll
+C:\Users\Hil\source\repos\Git\TestAcu1\TestAcuModels\obj\Debug\net6.0\TestAcuModels.pdb
+C:\Users\Hil\source\repos\Git\TestAcu1\TestAcuModels\obj\Debug\net6.0\ref\TestAcuModels.dll

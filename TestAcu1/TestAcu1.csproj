@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TestAcuDatabase\TestAcuDatabase.csproj" />
+    <ProjectReference Include="..\TestAcuModels\TestAcuModels.csproj" />
   </ItemGroup>
 
 </Project>
