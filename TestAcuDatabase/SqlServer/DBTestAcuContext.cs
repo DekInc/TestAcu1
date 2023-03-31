@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace TestAcu1.Database
+namespace TestAcuDatabase.SqlServer
 {
     public partial class DBTestAcuContext : DbContext
     {

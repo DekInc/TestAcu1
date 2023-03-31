@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace TestAcu1.Database
+namespace TestAcuDatabase.SqlServer
 {
     public partial class Persona
     {

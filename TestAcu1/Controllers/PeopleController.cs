@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using TestAcu1.Database;
+using TestAcuDatabase.SqlServer;
 using TestAcu1.Models;
 
 namespace TestAcu1.Controllers
@@ -15,7 +15,6 @@ namespace TestAcu1.Controllers
             _logger = logger;
         }
 
-       //Proyecto de testing
         [HttpGet("")]
         public RetValue<List<Persona>> GetAll()
         {
