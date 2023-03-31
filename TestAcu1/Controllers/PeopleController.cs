@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using TestAcu1.Database;
+using TestAcu1.Models;
 
 namespace TestAcu1.Controllers
 {
@@ -16,35 +17,102 @@ namespace TestAcu1.Controllers
 
        //Proyecto de testing
         [HttpGet("")]
-        public List<Persona> GetAll()
+        public RetValue<List<Persona>> GetAll()
         {
-            DBTestAcuContext ConexionBD = new DBTestAcuContext();
-            return ConexionBD.Personas.ToList();
+            try
+            {
+                DBTestAcuContext conexionBD = new DBTestAcuContext();
+                return new RetValue<List<Persona>>()
+                {
+                    Value = conexionBD.Personas.ToList()
+                };
+            }
+            catch (Exception e1)
+            {
+                return new RetValue<List<Persona>>()
+                {
+                    ErrorMessage = e1.Message
+                };
+            }
         }
 
         [HttpGet("Shuffle")]
-        public Persona? Shuffle()
+        public RetValue<Persona?> Shuffle()
         {
-            DBTestAcuContext ConexionBD = new DBTestAcuContext();
-            int proximoRegistro = (new Random()).Next(ConexionBD.Personas.Count() - 1);
-            Persona? personaABuscar = ConexionBD.Personas.Skip(proximoRegistro).FirstOrDefault();
-            return personaABuscar;
+            try
+            {
+                DBTestAcuContext conexionBD = new DBTestAcuContext();
+                int proximoRegistro = (new Random()).Next(conexionBD.Personas.Count() - 1);
+                Persona? personaABuscar = conexionBD.Personas.Skip(proximoRegistro).FirstOrDefault();
+                return new RetValue<Persona?>()
+                {
+                    Value = personaABuscar
+                };
+            }
+            catch (Exception e1)
+            {
+                return new RetValue<Persona?>()
+                {
+                    ErrorMessage = e1.Message
+                };
+            }
         }
 
         [HttpGet("{id}")]
-        public Persona? GetById(int id)
+        public RetValue<Persona?> GetById(int id)
         {
-            DBTestAcuContext ConexionBD = new DBTestAcuContext();
-            Persona? personaABuscar = ConexionBD.Personas.Where(x => x.Id == id).FirstOrDefault();
-            return personaABuscar;
+            try
+            {
+                DBTestAcuContext conexionBD = new DBTestAcuContext();
+                Persona? personaABuscar = conexionBD.Personas.Where(x => x.Id == id).FirstOrDefault();
+                return new RetValue<Persona?>()
+                {
+                    Value = personaABuscar,
+                    ErrorMessage = personaABuscar == null ? "Not found" : ""
+                };
+            }
+            catch (Exception e1)
+            {
+                return new RetValue<Persona?>()
+                {
+                    ErrorMessage = e1.Message
+                };
+            }
         }
 
         [HttpDelete("{id}")]
-        public bool DeleteById(int id)
+        public RetValue<bool> DeleteById(int id)
         {
-            DBTestAcuContext ConexionBD = new DBTestAcuContext();
-            Persona? personaABuscar = ConexionBD.Personas.Where(x => x.Id == id).FirstOrDefault();
-            return true;
+            try
+            {
+                DBTestAcuContext conexionBD = new DBTestAcuContext();
+                Persona? personaABuscar = conexionBD.Personas.Where(x => x.Id == id).FirstOrDefault();
+                if (personaABuscar == null)
+                {
+                    return new RetValue<bool>()
+                    {
+                        Value = false,
+                        ErrorMessage = "Not found"
+                    };
+                }
+                else
+                {
+                    conexionBD.Personas.Remove(personaABuscar);
+                    conexionBD.SaveChanges();
+                    return new RetValue<bool>()
+                    {
+                        Value = true
+                    };
+                }
+            }
+            catch (Exception e1)
+            {
+                return new RetValue<bool>()
+                {
+                    Value = false,
+                    ErrorMessage = e1.Message
+                };
+            }
         }
 
     }
