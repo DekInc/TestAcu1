@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\TestAcu1.props" />
-</Project>
