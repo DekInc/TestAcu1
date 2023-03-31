@@ -41,7 +41,7 @@ namespace TestAcu1.Controllers
             try
             {
                 DBTestAcuContext conexionBD = new DBTestAcuContext();
-                int proximoRegistro = (new Random()).Next(conexionBD.Personas.Count() - 1);
+                int proximoRegistro = (new Random(DateTime.Now.Millisecond)).Next(0, conexionBD.Personas.Count());
                 Persona? personaABuscar = conexionBD.Personas.Skip(proximoRegistro).FirstOrDefault();
                 return new RetValue<Persona?>()
                 {
